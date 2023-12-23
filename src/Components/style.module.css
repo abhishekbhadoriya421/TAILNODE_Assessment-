@@ -3,6 +3,23 @@
     color: forestgreen;
 }
 
+.resetTodo{
+    background-color: rgb(192, 12, 12);
+    color: white;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    top: 1%;
+    right: 2%;
+}
+
+.resetTodo:hover{
+    background-color: rgb(245, 20, 20);
+
+}
+
+
+
 .CompleteTodoList{
     display: flex;
     overflow: scroll;

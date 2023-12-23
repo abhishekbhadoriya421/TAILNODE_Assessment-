@@ -49,22 +49,33 @@ function TodoComponent() {
     }
   }, [todos]);
 
-
   // Update Todo
-  function updateTodo(id){
-    const  newtodos = todos.filter(todo=>{
-        if(todo.id === id){
-          todo.status = 'Completed'
-        }
-        return  todo
-      }) 
+  function updateTodo(id) {
+    const newtodos = todos.filter((todo) => {
+      if (todo.id === id) {
+        todo.status = "Completed";
+      }
+      return todo;
+    });
 
-      setTodos(newtodos);
+    setTodos(newtodos);
   }
+
+  // Reset Todo
+  const handleResetTodos = () => {
+    setTodos(null) 
+    localStorage.removeItem('todos');
+  };
 
   return (
     <>
       <h1 className={style.heading}>Todo Application</h1>
+      <button className={style.resetTodo}
+       title="Clear Todos"
+       onClick={handleResetTodos}
+       >
+        ResetTodo
+      </button>
       {/* this contain Add new todo Form For Adding Todo in List */}
       <div>
         <AddTodoFormComponent handleAddTodo={handleAddTodo} />
@@ -89,7 +100,7 @@ function TodoComponent() {
                     status={"Pending"}
                     Todo={todo.todo}
                     time={todo.time}
-                    id = {todo.id}
+                    id={todo.id}
                     handleUpdateStatus={updateTodo}
                   />
                 ) : (
