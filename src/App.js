@@ -1,11 +1,11 @@
 import TodoComponent from "./Components/TodoComponent";
 
-
 function App() {
   return (
-    <div className="App">
-      <TodoComponent/>
-    </div>
+      <div className="App">
+        <TodoComponent/>
+      </div>
+
   );
 }
 

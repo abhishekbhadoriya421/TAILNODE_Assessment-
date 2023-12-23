@@ -1,9 +1,21 @@
 import { useState } from "react";
 import style from "./style.module.css";
 // Add New Todo Form
-export default function AddTodoFormComponent() {
+export default function AddTodoFormComponent({handleAddTodo}) {
   const [todoValue, setTodoValue] = useState(null); // Contain New Todo Text
   const [showForm, setShowForm] = useState(false); // Manage Form Should be seen or not
+
+  // Handle on Submit
+
+  function handleOnSubmit(e){
+    e.preventDefault();
+    if(todoValue!==null){
+      handleAddTodo(todoValue);
+      setTodoValue(null);
+    }else{
+      alert("Cannot Add Empty Todo")
+    }
+  }
   return (
     <>
     <div className={(showForm) ? style.formContainer : null}>
@@ -16,7 +28,7 @@ export default function AddTodoFormComponent() {
              title="Close Form"
              onClick={(e)=>setShowForm(!showForm)}
              >X</p>
-            <form className={style.form}>
+            <form className={style.form} onSubmit={handleOnSubmit}>
               <div>
                 <input
                   type="text"

@@ -1,13 +1,14 @@
 import style from "./style.module.css";
-export default function CompleteTodoItemComponent({ status, Todo, time }) {
+export default function CompleteTodoItemComponent({ status, Todo, time, id ,handleUpdateStatus}) {
+    const Time = new Date(time);
 // Here getting the date month and year separately 
-  const date = new Date().getDate();
-  const month = new Date().getMonth();
-  const year = new Date().getFullYear();
+  const date = Time.getDate();
+  const month = Time.getMonth();
+  const year = Time.getFullYear();
   return (
     <>
       <div className={style.Item}>
-        <p className={style.Todo}>workOut</p>
+        <p className={style.Todo}>{Todo}</p>
         <hr />
         <p className={style.date}>
           {date}/{month}/{year}
@@ -19,6 +20,9 @@ export default function CompleteTodoItemComponent({ status, Todo, time }) {
               ? style.statusPendingBtn
               : style.statusCompletedBtn
           }
+          
+        // this function should only work when status is pending  
+          onClick={()=> status === 'Pending'? handleUpdateStatus(id): null}
         >
           {status}
         </button>
