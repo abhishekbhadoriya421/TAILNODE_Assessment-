@@ -2,16 +2,16 @@ import { useState } from "react";
 import style from "./style.module.css";
 // Add New Todo Form
 export default function AddTodoFormComponent({handleAddTodo}) {
-  const [todoValue, setTodoValue] = useState(null); // Contain New Todo Text
+  const [todoValue, setTodoValue] = useState(""); // Contain New Todo Text
   const [showForm, setShowForm] = useState(false); // Manage Form Should be seen or not
 
   // Handle on Submit
 
   function handleOnSubmit(e){
     e.preventDefault();
-    if(todoValue!==null){
+    if(todoValue!==""){
+      setTodoValue("");
       handleAddTodo(todoValue);
-      setTodoValue(null);
     }else{
       alert("Cannot Add Empty Todo")
     }

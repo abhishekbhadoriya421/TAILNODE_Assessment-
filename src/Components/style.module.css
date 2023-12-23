@@ -30,3 +30,16 @@
     margin-bottom: 50px;
     border: 1px solid grey;
 }
+
+
+/* Media Query */
+@media screen and (max-width:850px) {
+    .heading{
+        font-size: 1.3rem;
+    }
+    .resetTodo{
+        
+        width: 100px;
+        height: 35px;
+    }
+}

@@ -82,3 +82,30 @@ button:hover{
    background-color: rgb(21, 104, 204);
    transform: scale(1.009);
 }
+
+
+/* Media Query */
+@media screen and (max-width:850px) {
+    .formContainer{
+        width: 60%;
+    }
+
+    .inputTodo{
+        font-size: 1rem;
+    }
+    button{
+        font-size: 1rem;
+    }
+    
+    .showTodoFormBtn{
+        width: 150px;
+        height: 40px;
+    }
+}
+
+/* Media Query */
+@media screen and (max-width:500px) {
+    .formContainer{
+        width: 90%;
+    }
+}
