@@ -1,0 +1,15 @@
+.heading{
+    margin: 10px;
+    color: forestgreen;
+}
+
+.CompleteTodoList{
+    display: flex;
+    overflow: scroll;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 470px;
+    margin: auto;
+    margin-bottom: 50px;
+    border: 1px solid grey;
+}
